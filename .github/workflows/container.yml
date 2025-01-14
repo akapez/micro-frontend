@@ -16,10 +16,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Get code
       - uses: actions/checkout@v4.2.2
-      - run: npm install
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.1.0
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Build project
       - run: npm run build
-
+      - name: Deploy AWS
       - uses: shinyinc/action-aws-cli@v1.2
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
         env:
