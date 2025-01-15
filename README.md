@@ -26,5 +26,3 @@ Before choosing micro-frontends, evaluate:
 3. Runtime Integration:
     - Server-Side: Assemble micro-frontends on the server before delivering them to the client.
     - Client-Side: Load and render micro-frontends dynamically in the browser.
-
-Useful Links: [How We Build Micro Frontends With Lattice](https://netflixtechblog.com/how-we-build-micro-frontends-with-lattice-22b8635f77ea)
